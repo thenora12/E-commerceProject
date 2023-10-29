@@ -140,10 +140,8 @@ exports.allProducts=(req,res)=>{
     }
     console.log(query)
  Product.find(query) 
-  
         .select()
         .populate('category')
-        
         .sort([[sortBy,order]])
         .limit(limit)
         .exec((err,products)=>{
